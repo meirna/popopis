@@ -9,19 +9,19 @@
       :root {
         --bg-primary: #f7f9fc;
         --bg-secondary: #ffffff;
-        --bg-accent: #eef2ff;
+        --bg-accent: #e3ecfa; /* custom soft blue for card bg */
         --text-primary: #1f2937;
         --text-secondary: #6b7280;
-        --border-color: #e5e7eb;
+        --border-color: #60a5fa; /* blue-400 for border */
       }
 
       [data-theme="dark"] {
         --bg-primary: #0f172a;
         --bg-secondary: #1e293b;
-        --bg-accent: #1e1b4b;
+        --bg-accent: #1e3a8a; /* blue-800, deeper for contrast */
         --text-primary: #f1f5f9;
         --text-secondary: #cbd5e1;
-        --border-color: #334155;
+        --border-color: #60a5fa; /* blue-400 for border */
       }
 
       body {
@@ -51,24 +51,25 @@
         color: var(--text-secondary) !important;
       }
 
-      .bg-indigo-50 {
+      .bg-blue-50 {
+        background-color: var(--bg-accent) !important;
+      }
+      [data-theme="dark"] .bg-blue-50 {
         background-color: var(--bg-accent) !important;
       }
 
-      [data-theme="dark"] .border-indigo-200 {
-        border-color: #4338ca !important;
+      [data-theme="dark"] .border-blue-200 {
+        border-color: var(--border-color) !important;
       }
 
-      [data-theme="dark"] .text-indigo-700 {
-        color: #a5b4fc !important;
+      [data-theme="dark"] .text-blue-700 {
+        color: #60a5fa !important;
       }
-
-      [data-theme="dark"] .text-indigo-800 {
-        color: #c7d2fe !important;
+      [data-theme="dark"] .text-blue-800 {
+        color: #93c5fd !important;
       }
-
-      [data-theme="dark"] .text-indigo-600 {
-        color: #818cf8 !important;
+      [data-theme="dark"] .text-blue-600 {
+        color: #3b82f6 !important;
       }
 
       .theme-toggle {
@@ -89,7 +90,7 @@
       }
 
       [data-theme="dark"] .theme-toggle {
-        background-color: #4338ca;
+        background-color: #2563eb;
       }
 
       .theme-toggle::before {
@@ -184,7 +185,7 @@
   </head>
   <body class="p-4 sm:p-8">
     <header class="text-center mb-8 bg-white p-6 rounded-xl shadow-sm">
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-indigo-700 mb-2">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-blue-700 mb-2">
         🐱 Popis za Posjete 📘
       </h1>
       <p class="text-lg sm:text-xl text-gray-600 font-semibold mb-4">
@@ -196,20 +197,20 @@
     </header>
 
     <section
-      class="mb-10 p-6 bg-indigo-50 rounded-xl border-2 border-indigo-200"
+      class="mb-10 p-6 bg-blue-50 rounded-xl border-2 border-blue-200"
     >
-      <h2 class="text-xl sm:text-2xl font-bold text-indigo-800 mb-4">
+      <h2 class="text-xl sm:text-2xl font-bold text-blue-800 mb-4">
         🗓️ Potrebni termini posjeta
       </h2>
       <ul class="space-y-3 text-base sm:text-lg font-medium text-gray-700">
         <li
-          class="bg-white p-3 rounded-lg shadow-sm border-l-4 border-indigo-400"
+          class="bg-white p-3 rounded-lg shadow-sm border-l-4 border-blue-400"
         >
           <span name="date-label" data-date="2025-12-03" class="font-bold">3. prosinca:</span> Popodne / Navečer
         </li>
 
         <li
-          class="bg-white p-3 rounded-lg shadow-sm border-l-4 border-indigo-400"
+          class="bg-white p-3 rounded-lg shadow-sm border-l-4 border-blue-400"
         >
           <span name="date-label" data-date="2025-12-04" class="font-bold">4. prosinca:</span>
           <ul class="ml-4 mt-1 list-disc list-inside">
@@ -224,12 +225,12 @@
         </li>
 
         <li
-          class="bg-white p-3 rounded-lg shadow-sm border-l-4 border-indigo-400"
+          class="bg-white p-3 rounded-lg shadow-sm border-l-4 border-blue-400"
         >
           <span name="date-label" data-date="2025-12-05" class="font-bold">5. prosinca:</span> Jutro (prije 12:00 sati)
         </li>
       </ul>
-      <p class="mt-4 text-sm text-indigo-600 italic">
+      <p class="mt-4 text-sm text-blue-600 italic">
         Molim da ostanete barem 15ak minuta prilikom svakog posjeta.
       </p>
     </section>
@@ -338,7 +339,7 @@
 
         <button
           onclick="closeModal()"
-          class="mt-6 w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg rounded-xl shadow-md transition duration-150"
+          class="mt-6 w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg rounded-xl shadow-md transition duration-150"
         >
           Ok, zatvori
         </button>
