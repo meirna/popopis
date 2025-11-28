@@ -181,6 +181,15 @@
       .modal-close-btn {
         z-index: 1000;
       }
+      [data-theme="dark"] .modal-close-btn {
+        background-color: #334155 !important;
+        color: #cbd5e1 !important;
+        border-color: #475569 !important;
+      }
+      [data-theme="dark"] .modal-close-btn:hover {
+        background-color: #1e293b !important;
+        color: #f1f5f9 !important;
+      }
     </style>
   </head>
   <body class="p-4 sm:p-8">
@@ -308,7 +317,8 @@
       >
         <button
           onclick="closeModal()"
-          class="modal-close-btn absolute top-3 right-3 bg-red-600 hover:bg-red-700 text-white font-bold p-3 rounded-full text-xl w-12 h-12 flex items-center justify-center shadow-md transition duration-150"
+          class="modal-close-btn absolute top-5 right-5 bg-gray-200 hover:bg-gray-300 text-gray-600 font-normal p-2 rounded-full text-lg w-8 h-8 flex items-center justify-center shadow-sm transition duration-150 border border-gray-300"
+          aria-label="Zatvori modal"
         >
           &times;
         </button>
