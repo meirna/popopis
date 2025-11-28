@@ -34,7 +34,7 @@
         🐱 Popis za Posjete 📘
       </h1>
       <p class="text-lg sm:text-xl text-gray-600 font-semibold">
-        Upute za čuvanje Ragdoll mačka
+        Upute za čuvanje mačka (Po)
       </p>
     </header>
 
@@ -42,7 +42,7 @@
       class="mb-10 p-6 bg-indigo-50 rounded-xl border-2 border-indigo-200"
     >
       <h2 class="text-xl sm:text-2xl font-bold text-indigo-800 mb-4">
-        🗓️ Potrebni termini Posjeta
+        🗓️ Potrebni termini posjeta
       </h2>
       <ul class="space-y-3 text-base sm:text-lg font-medium text-gray-700">
         <li
@@ -56,13 +56,13 @@
         >
           <span class="font-bold">4. prosinca:</span>
           <ul class="ml-4 mt-1 list-disc list-inside">
-            <li>Jutro (10:00 – 12:00 sati)</li>
+            <li>Jutro (10:00h)</li>
             <li>Popodne / Navečer</li>
           </ul>
 
           <p class="mt-2 text-sm font-bold text-red-600">
-            🚨 VAŽNO: Termin dimnjačara je ujutro (10:00 – 12:00)! Molim budite
-            u stanu da omogućite pristup dimnjaku.
+            🚨 VAŽNO: Termin dimnjačara je ujutro 10:00 – 12:00! Molim budite
+            u stanu od 10h da omogućite pristup dimnjaku.
           </p>
         </li>
 
@@ -79,7 +79,7 @@
 
     <section class="space-y-6">
       <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-6">
-        ✅ Popis Potreba
+        ✅ Popis potreba
       </h2>
 
       <div
@@ -92,13 +92,12 @@
 
       <div
         class="task-card bg-white p-6 rounded-2xl shadow-lg border-b-4 border-green-400"
-        onclick="openModal('feed', '2. Popapati', 'Dnevno obavezno Popek treba dobiti ukupno 60 grama suhe hrane. Opcionalno može dobiti i vrećicu mokre hrane i malo grickalica.', 'https://placehold.co/600x400/e6ffe6/333333', '🚨 Važno: NE popapati Popeka')"
+        onclick="openModal('feed', '2. Popapati', 'Dnevno Popek treba dobiti ukupno 60 grama suhe hrane. Opcionalno može dobiti i vrećicu mokre hrane i malo grickalica.', 'https://placehold.co/600x400/e6ffe6/333333', '🚨 Važno: NE popapati Popeka')"
       >
         <p class="text-2xl font-extrabold text-green-700">2. Popapati</p>
         <p class="text-base text-gray-500 mt-1">(Klikni za detaljne upute)</p>
       </div>
 
-      <!-- Task 3: Outside Time -->
       <div
         class="task-card bg-white p-6 rounded-2xl shadow-lg border-b-4 border-blue-400"
         onclick="openModal('out', '3. P(r)ozori', 'Otvori veliki prozor u dnevnoj ili spavaćoj sobi. Po nekad voli sjediti na prozorskoj klupici i gledati van.', 'https://placehold.co/600x400/e6efff/333333', '🚨 VAŽNO: ne otvarati male prozore (koji nemaju ogradu)')"
@@ -107,20 +106,19 @@
         <p class="text-base text-gray-500 mt-1">(Klikni za detaljne upute)</p>
       </div>
 
-      <!-- Task 4: Litter Boxes -->
       <div
         class="task-card bg-white p-6 rounded-2xl shadow-lg border-b-4 border-yellow-400"
-        onclick="openModal('litter', '4. Očistite Kutije za Pijesak (x2)', 'Postoje dvije kutije za pijesak: jedna u velikoj kupaoni, a druga u dnevnoj sobi. Sve grudice iz pijeska pokupi lopaticom u malu plastičnu vrećicu, čvrsto zaveži vrećicu i baci ju u smeće u kuhinji.', 'https://placehold.co/600x400/fffbeb/333333')"
+        onclick="openModal('litter', '4. Počistiti pijesak (2x)', 'U stanu su dvije kutije za pijesak: jedna u velikoj kupaoni, a druga u dnevnoj sobi. Sve grudice iz pijeska pokupi lopaticom u malu plastičnu vrećicu, čvrsto zaveži vrećicu i baci ju u smeće u kuhinji.', 'https://placehold.co/600x400/fffbeb/333333')"
       >
         <p class="text-2xl font-extrabold text-yellow-700">
-          4. Počistiti pijesak (2)
+          4. Počistiti pijesak (2x)
         </p>
         <p class="text-base text-gray-500 mt-1">(Klikni za detaljne upute)</p>
       </div>
 
       <div
         class="task-card bg-white p-6 rounded-2xl shadow-lg border-b-4 border-cyan-500"
-        onclick="openModal('secure', '5. P(r)ovjeriti vodu', 'Provjeri radi li fontana za vodu i ima li dovoljno vode. Ako je razlivena voda oko fontane, obriši ju spužvom, krpom ili papirom.', 'https://placehold.co/600x400/5c706e/ffffff')"
+        onclick="openModal('secure', '5. P(r)ovjeriti vodu', 'Provjeri radi li fontana za vodu i ima li dovoljno vode. Ako je voda razlivena oko fontane, obriši ju spužvom, krpom ili papirom.', 'https://placehold.co/600x400/5c706e/ffffff')"
       >
         <p class="text-2xl font-extrabold text-cyan-700">
           5. P(r)ovjeriti vodu
@@ -139,6 +137,10 @@
       </div>
     </section>
 
+     <footer class="mt-12 text-center p-4 text-gray-500 text-sm sm:text-base">
+      <p>Hvala od Popeka, Marka i Mirne ❤️</p>
+    </footer>
+
     <div
       id="taskModal"
       class="fixed inset-0 z-50 hidden bg-black bg-opacity-75 flex items-center justify-center p-4"
@@ -153,15 +155,12 @@
           &times;
         </button>
 
-        <!-- Modal Title -->
         <h3
           id="modalTitle"
           class="text-2xl sm:text-3xl font-extrabold text-gray-800 mb-4 pr-12"
         >
-          <!-- Naslov Zadatka -->
         </h3>
 
-        <!-- Modal Image Placeholder -->
         <img
           id="modalImage"
           src=""
@@ -169,7 +168,6 @@
           class="w-full h-auto object-cover rounded-lg mb-6 shadow-md border-2 border-gray-100"
         />
 
-        <!-- Modal Body Text -->
         <p
           id="modalText"
           class="text-base sm:text-lg text-gray-700 leading-relaxed"
@@ -210,21 +208,15 @@
         modalImage.src = imageUrl;
         modalDisclaimer.textContent = disclaimer;
 
-        // Show the modal
         modal.classList.remove("hidden");
-        document.body.style.overflow = "hidden"; // Prevent scrolling background
+        document.body.style.overflow = "hidden";
       }
 
-      /**
-       * Closes the modal.
-       */
       function closeModal() {
-        // Hide the modal
         modal.classList.add("hidden");
-        document.body.style.overflow = ""; // Restore scrolling
+        document.body.style.overflow = ""; 
       }
 
-      // Optional: Close modal when clicking outside of it
       modal.addEventListener("click", (event) => {
         if (event.target === modal) {
           closeModal();
