@@ -48,13 +48,13 @@
         <li
           class="bg-white p-3 rounded-lg shadow-sm border-l-4 border-indigo-400"
         >
-          <span class="font-bold">3. prosinca:</span> Popodne / Navečer
+          <span name="date-label" data-date="2025-12-03" class="font-bold">3. prosinca:</span> Popodne / Navečer
         </li>
 
         <li
           class="bg-white p-3 rounded-lg shadow-sm border-l-4 border-indigo-400"
         >
-          <span class="font-bold">4. prosinca:</span>
+          <span name="date-label" data-date="2025-12-04" class="font-bold">4. prosinca:</span>
           <ul class="ml-4 mt-1 list-disc list-inside">
             <li>Jutro (10:00h)</li>
             <li>Popodne / Navečer</li>
@@ -69,7 +69,7 @@
         <li
           class="bg-white p-3 rounded-lg shadow-sm border-l-4 border-indigo-400"
         >
-          <span class="font-bold">5. prosinca:</span> Jutro (prije 12:00 sati)
+          <span name="date-label" data-date="2025-12-05" class="font-bold">5. prosinca:</span> Jutro (prije 12:00 sati)
         </li>
       </ul>
       <p class="mt-4 text-sm text-indigo-600 italic">
@@ -220,6 +220,27 @@
       modal.addEventListener("click", (event) => {
         if (event.target === modal) {
           closeModal();
+        }
+      });
+    </script>
+    <script>
+      const dates = document.getElementsByName("date-label");
+      const now = new Date();
+      const today = [
+        now.getFullYear(),
+        String(now.getMonth() + 1).padStart(2, "0"),
+        String(now.getDate()).padStart(2, "0"),
+      ].join("-");
+
+      Array.from(dates).forEach((el) => {
+        const dateValue = el.getAttribute("data-date");
+        if (dateValue === today) {
+          const marker = document.createElement("span");
+          marker.setAttribute("data-today-marker", "true");
+          marker.className =
+            "ml-2 inline-flex items-center text-sm font-semibold text-green-700 bg-green-100 px-2 py-0.5 rounded-full";
+          marker.textContent = "danas";
+          el.insertAdjacentElement("afterend", marker);
         }
       });
     </script>
