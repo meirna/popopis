@@ -250,7 +250,7 @@
 
       <div
         class="task-card bg-white p-6 rounded-2xl shadow-md border-b-4 border-rose-300"
-        onclick="openModal('pet', '1. Podragati', 'Podragaj Popeka čim uđeš u stan. Vjerojatno će se baciti na leđa i tražiti glađenje po bušici. Popričaj s njim, npr. reci mu da je jako sladak.', './img/podrag1.jpeg')"
+        onclick="openModal('pet', '1. Podragati', 'Podragaj Popeka čim uđeš u stan. Vjerojatno će se baciti na leđa i tražiti glađenje po bušici. Popričaj s njim, npr. reci mu da je jako sladak.', './img/podrag1.jpeg', undefined, '💡 Bonus: Igračke su mu na vrhu ormara kraj prozora u spavaćoj sobi')"
       >
         <p class="text-2xl font-extrabold text-rose-600">1. Podragati</p>
         <p class="text-base text-gray-500 mt-1">(Klikni za detaljne upute)</p>
@@ -346,6 +346,10 @@
           Disclaimer
         </p>
 
+        <p id="modalExtraInfo" class="mt-2 text-base font-bold text-blue-600">
+          Extra info
+        </p>
+
         <button
           onclick="closeModal()"
           class="mt-6 w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg rounded-xl shadow-md transition duration-150"
@@ -361,6 +365,7 @@
       const modalImage = document.getElementById("modalImage");
       const modalText = document.getElementById("modalText");
       const modalDisclaimer = document.getElementById("modalDisclaimer");
+      const modalExtraInfo = document.getElementById("modalExtraInfo");
 
       /**
        * Opens the modal and populates it with task details.
@@ -369,11 +374,12 @@
        * @param {string} text - The detailed instructions.
        * @param {string} imageUrl - The URL for the placeholder image.
        */
-      function openModal(id, title, text, imageUrl, disclaimer) {
+      function openModal(id, title, text, imageUrl, disclaimer, extraInfo) {
         modalTitle.textContent = title;
         modalText.textContent = text;
         modalImage.src = imageUrl;
         modalDisclaimer.textContent = disclaimer;
+        modalExtraInfo.textContent = extraInfo;
 
         modal.classList.remove("hidden");
         document.body.style.overflow = "hidden";
@@ -401,7 +407,6 @@
         localStorage.setItem('theme', newTheme);
       }
 
-      // Load saved theme on page load
       (function() {
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
