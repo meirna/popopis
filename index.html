@@ -10,19 +10,19 @@
       :root {
         --bg-primary: #f7f9fc;
         --bg-secondary: #ffffff;
-        --bg-accent: #e3ecfa; /* custom soft blue for card bg */
+        --bg-accent: #e3ecfa; 
         --text-primary: #1f2937;
         --text-secondary: #6b7280;
-        --border-color: #60a5fa; /* blue-400 for border */
+        --border-color: #60a5fa;
       }
 
       [data-theme="dark"] {
         --bg-primary: #0f172a;
         --bg-secondary: #1e293b;
-        --bg-accent: #1e3a8a; /* blue-800, deeper for contrast */
+        --bg-accent: #1e3a8a;
         --text-primary: #f1f5f9;
         --text-secondary: #cbd5e1;
-        --border-color: #60a5fa; /* blue-400 for border */
+        --border-color: #60a5fa;
       }
 
       body {
@@ -55,6 +55,7 @@
       .bg-blue-50 {
         background-color: var(--bg-accent) !important;
       }
+
       [data-theme="dark"] .bg-blue-50 {
         background-color: var(--bg-accent) !important;
       }
@@ -66,9 +67,11 @@
       [data-theme="dark"] .text-blue-700 {
         color: #60a5fa !important;
       }
+
       [data-theme="dark"] .text-blue-800 {
         color: #93c5fd !important;
       }
+      
       [data-theme="dark"] .text-blue-600 {
         color: #3b82f6 !important;
       }
@@ -432,7 +435,6 @@
         String(now.getDate()).padStart(2, "0"),
       ].join("-");
 
-      // Get all date cards (li elements with data-date)
       const dateCards = document.querySelectorAll('li[data-date]');
       
       Array.from(dates).forEach((el) => {
@@ -447,7 +449,6 @@
         }
       });
 
-      // Apply disabled styling to past dates
       Array.from(dateCards).forEach((card) => {
         const dateValue = card.getAttribute("data-date");
         if (dateValue < today) {
