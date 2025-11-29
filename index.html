@@ -191,6 +191,14 @@
         background-color: #1e293b !important;
         color: #f1f5f9 !important;
       }
+      .date-card-past {
+        opacity: 0.5;
+        filter: grayscale(60%);
+      }
+      [data-theme="dark"] .date-card-past {
+        opacity: 0.4;
+        filter: grayscale(70%);
+      }
     </style>
   </head>
   <body class="p-2 sm:p-8 max-w-3xl mx-auto">
@@ -213,12 +221,14 @@
       <ul class="space-y-3 text-base sm:text-lg font-medium text-gray-700">
         <li
           class="bg-white p-3 rounded-lg shadow-sm border-l-4 border-blue-400"
+          data-date="2025-12-03"
         >
           <span name="date-label" data-date="2025-12-03" class="font-bold">3. prosinca:</span> Popodne / Navečer
         </li>
 
         <li
           class="bg-white p-3 rounded-lg shadow-sm border-l-4 border-blue-400"
+          data-date="2025-12-04"
         >
           <span name="date-label" data-date="2025-12-04" class="font-bold">4. prosinca:</span>
           <ul class="ml-4 mt-1 list-disc list-inside">
@@ -234,6 +244,7 @@
 
         <li
           class="bg-white p-3 rounded-lg shadow-sm border-l-4 border-blue-400"
+          data-date="2025-12-05"
         >
           <span name="date-label" data-date="2025-12-05" class="font-bold">5. prosinca:</span> Jutro (prije 12:00 sati)
         </li>
@@ -421,6 +432,9 @@
         String(now.getDate()).padStart(2, "0"),
       ].join("-");
 
+      // Get all date cards (li elements with data-date)
+      const dateCards = document.querySelectorAll('li[data-date]');
+      
       Array.from(dates).forEach((el) => {
         const dateValue = el.getAttribute("data-date");
         if (dateValue === today) {
@@ -430,6 +444,14 @@
             "ml-2 inline-flex items-center text-sm font-semibold text-green-700 bg-green-100 px-2 py-0.5 rounded-full";
           marker.textContent = "danas";
           el.insertAdjacentElement("afterend", marker);
+        }
+      });
+
+      // Apply disabled styling to past dates
+      Array.from(dateCards).forEach((card) => {
+        const dateValue = card.getAttribute("data-date");
+        if (dateValue < today) {
+          card.classList.add("date-card-past");
         }
       });
     </script>
